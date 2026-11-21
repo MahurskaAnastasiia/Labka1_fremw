@@ -1,0 +1,38 @@
+### Створення читача
+POST http://localhost:8080/api/readers
+Content-Type: application/json
+
+{
+  "fullName": "Рамзет Аліна",
+  "email": "alina_ramzet@cute.com"
+}
+
+### Створюємо книгу
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "title": "Хімія смерті",
+  "author": "Саймон Бекетт"
+}
+
+### Отримуємо список книг
+GET http://localhost:8080/api/books
+
+### Видаємо книгу читачу
+POST http://localhost:8080/api/loans
+Content-Type: application/json
+
+{
+  "readerId": 1,
+  "bookId": 1
+}
+
+### Статус читача
+GET http://localhost:8080/api/readers/1/reliability
+
+### Активні книги читача
+GET http://localhost:8080/api/readers/1/loans/active
+
+### Повернути книгу
+POST http://localhost:8080/api/loans/1/return
